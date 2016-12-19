@@ -1,7 +1,6 @@
 You should create one R script called run_analysis.R that does the following.
 
 
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 # step: download data and reading
 
@@ -91,8 +90,10 @@ Data2<-aggregate(. ~subject + activity, Data, mean)
 Data2<-Data2[order(Data2$subject,Data2$activity),]
 write.table(Data2, file = "finaltidydata.txt",row.name=FALSE)
 
-
-#Codebook
-
 library(knitr)
-knit2html("codebook.Rmd");
+codebook(Data2)
+
+
+
+
+
